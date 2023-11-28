@@ -20,12 +20,13 @@ server.headersTimeout = 120 * 1000;
 
 function getMessage(bodyMessage) {
     // const body = 'This is a test email using SendGrid from Node.js';
+    let finalData = bodyMessage.split('\n').join('<br/>')
     return {
       to: process.env.TO_MAIL,
       from: process.env.FROM_MAIL,
       subject: 'Email from Web Form',
       text: bodyMessage,
-      html: `<strong>${bodyMessage.split('\n').join('<br/>')}</strong>`,
+      html: `<strong>${finalData}</strong>`,
     };
   }
   
