@@ -1,5 +1,6 @@
-require("dotenv").config({ path: "../.env" });
-const sgMail = require("@sendgrid/mail");
+// require("dotenv").config({ path: "../.env" });
+// const sgMail = require("@sendgrid/mail");
+import sgMail from '@sendgrid/mail';
 
 export default function handler(req, res) {
   const { name = "World" } = req.query;
