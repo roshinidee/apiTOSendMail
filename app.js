@@ -7,7 +7,7 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 
 
-app.get("/", async(req, res) => {
+app.post("/", async(req, res) => {
     await sendEmail(req.body.content)
     res.send("Hello World!");
     
